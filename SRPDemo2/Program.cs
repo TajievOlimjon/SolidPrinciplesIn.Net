@@ -8,26 +8,7 @@ public class Program
         //GetEducationService();
         /*var study = new Study();
         study.Learning();*/
-        DriveInfo[] drives = DriveInfo.GetDrives();
-
-        foreach (DriveInfo drive in drives)
-        {
-            Console.WriteLine($"Название: {drive.Name}");
-            Console.WriteLine($"Тип: {drive.DriveType}");
-            if (drive.IsReady)
-            {
-                Console.WriteLine($"Объем диска: {drive.TotalSize}");
-                Console.WriteLine($"Свободное пространство: {drive.TotalFreeSpace}");
-                Console.WriteLine($"Метка диска: {drive.VolumeLabel}");
-                Console.WriteLine($"Корневой каталог {drive.RootDirectory}");
-            }
-            Console.WriteLine();
-        }
-        string dirName = "C";
-        var driv = new DriveInfo(dirName);
-        var dir = new DirectoryInfo(driv.Name);
-        var file = dir.GetFiles();
-        Console.WriteLine(file);
+       
         Console.ReadLine();
     }
     static void GetStudentService()
@@ -43,7 +24,7 @@ public class Program
     static void GetEducationService()
     {
         var center = new EducationCenter("Olim");
-        BaseLearningSkill[] skills = new BaseLearningSkill[] { new Puple(), new Teacher() };
+        BaseLearningSkill[] skills = new BaseLearningSkill[] { new Pupil(), new Teacher(),new Study()};
         center.GetInfo(skills);
     }
 }
